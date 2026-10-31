@@ -1,0 +1,39 @@
+name: Generate Terminal Contribution Snake
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths-ignore:
+      - 'assets/github-snake*.svg'
+  schedule:
+    - cron: '0 5 * * *' # Se actualiza automáticamente todos los días (00:00 COT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate github-snake.svg (Light & Dark Terminal Theme)
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            assets/github-snake.svg?palette=github-light&color_snake=#238636
+            assets/github-snake-dark.svg?palette=github-dark&color_snake=#3fb950&color_dots=#0d1117,#0e4429,#006d32,#26a641,#39d353
+
+      - name: Commit & Push updated snake SVGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/github-snake.svg assets/github-snake-dark.svg
+          git diff --staged --quiet || git commit -m "chore: update contribution snake animation"
+          git push

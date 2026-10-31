@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 456" width="100%" role="img" aria-label="Terminal interactiva de Iván Mauricio Duque Aricapa - Full Stack Backend-Oriented Developer">
+  <defs>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#238636" />
+      <stop offset="50%" stop-color="#1f6feb" />
+      <stop offset="100%" stop-color="#2ea043" />
+    </linearGradient>
+    <linearGradient id="topBarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#161b22" />
+      <stop offset="100%" stop-color="#131820" />
+    </linearGradient>
+    <clipPath id="termInner">
+      <rect x="8" y="40" width="904" height="410" rx="8" />
+    </clipPath>
+  </defs>
+
+  <style>
+    .mono {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SFMono-Regular', 'Liberation Mono', Menlo, monospace;
+    }
+    .sans {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    @keyframes blinkCursor {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes showInstant {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Typing reveal masks */
+    @keyframes typeCmd1 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(240px); }
+    }
+    @keyframes hideCursorAfter {
+      0%, 98% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    @keyframes typeCmd2 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(335px); }
+    }
+    @keyframes typeCmd3 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(215px); }
+    }
+
+    .status-dot {
+      animation: pulseDot 2.2s ease-in-out infinite;
+    }
+
+    /* Step 1: Command 1 */
+    .mask-1 {
+      animation: typeCmd1 0.85s steps(24, end) 0.2s forwards;
+    }
+    .cur-1 {
+      animation: hideCursorAfter 0.85s linear 0.2s forwards;
+    }
+    .out-1 {
+      opacity: 0;
+      animation: fadeSlideUp 0.25s ease-out 1.1s forwards;
+    }
+
+    /* Step 2: Command 2 */
+    .line-2 {
+      opacity: 0;
+      animation: showInstant 0.01s linear 1.4s forwards;
+    }
+    .mask-2 {
+      animation: typeCmd2 1.05s steps(35, end) 1.45s forwards;
+    }
+    .cur-2 {
+      animation: hideCursorAfter 1.05s linear 1.45s forwards;
+    }
+    .out-2 {
+      opacity: 0;
+      animation: fadeSlideUp 0.25s ease-out 2.55s forwards;
+    }
+
+    /* Step 3: Command 3 */
+    .line-3 {
+      opacity: 0;
+      animation: showInstant 0.01s linear 2.9s forwards;
+    }
+    .mask-3 {
+      animation: typeCmd3 0.7s steps(21, end) 2.95s forwards;
+    }
+    .cur-3 {
+      animation: hideCursorAfter 0.7s linear 2.95s forwards;
+    }
+    .out-3 {
+      opacity: 0;
+      animation: fadeSlideUp 0.25s ease-out 3.7s forwards;
+    }
+
+    /* Final prompt */
+    .line-final {
+      opacity: 0;
+      animation: showInstant 0.01s linear 4.0s forwards;
+    }
+    .final-cursor {
+      animation: blinkCursor 1s step-end infinite;
+    }
+  </style>
+
+  <!-- Terminal Window Frame -->
+  <rect x="2" y="2" width="916" height="452" rx="12" fill="#0b0f17" stroke="url(#borderGrad)" stroke-width="1.8" />
+
+  <!-- Top Bar -->
+  <path d="M14 2.9 H906 A11.1 11.1 0 0 1 917.1 14 V38 H2.9 V14 A11.1 11.1 0 0 1 14 2.9 Z" fill="url(#topBarGrad)" />
+  <line x1="2" y1="38" x2="918" y2="38" stroke="#21262d" stroke-width="1" />
+
+  <!-- Window Traffic Lights -->
+  <circle cx="24" cy="20" r="6" fill="#ff5f56" />
+  <circle cx="44" cy="20" r="6" fill="#ffbd2e" />
+  <circle cx="64" cy="20" r="6" fill="#27c93f" />
+
+  <!-- Window Title -->
+  <text x="460" y="24" text-anchor="middle" fill="#8b949e" font-size="12.5" class="mono">MauroDeveloper7@prod-server: ~/portfolio (zsh)</text>
+
+  <!-- Live Status Pill -->
+  <circle cx="808" cy="20" r="4" fill="#3fb950" class="status-dot" />
+  <text x="819" y="24" fill="#3fb950" font-size="11.5" font-weight="600" class="mono">PROD · CO</text>
+
+  <!-- Clipped Terminal Content -->
+  <g clip-path="url(#termInner)">
+    <!-- ==================== COMMAND 1 ==================== -->
+    <g class="mono" font-size="14">
+      <text x="28" y="66" font-weight="700">
+        <tspan fill="#3fb950">mauricio@prod</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#e6edf3">$</tspan>
+      </text>
+      <text x="176" y="66" fill="#f0f6fc">whoami --profile --stack</text>
+      <g class="mask-1">
+        <rect x="176" y="50" width="420" height="22" fill="#0b0f17" />
+        <rect x="176" y="52" width="8.5" height="16" fill="#3fb950" class="cur-1" />
+      </g>
+    </g>
+
+    <!-- ==================== OUTPUT 1 ==================== -->
+    <g class="out-1 mono">
+      <rect x="28" y="80" width="3" height="118" rx="1.5" fill="#3fb950" />
+
+      <text x="44" y="96" font-size="15.5" font-weight="700" fill="#ffffff">
+        IVAN MAURICIO DUQUE ARICAPA <tspan fill="#58a6ff" font-size="13.5" font-weight="500">// Full Stack Developer (Backend-Oriented)</tspan>
+      </text>
+
+      <text x="44" y="120" font-size="13" fill="#8b949e">
+        ├─ Location   : <tspan fill="#e6edf3">Pereira, Colombia  ·  3+ Años Exp  ·  Operación en CO, EC y PE</tspan>
+      </text>
+      <text x="44" y="142" font-size="13" fill="#8b949e">
+        ├─ Backend    : <tspan fill="#7ee787">NestJS · Laravel · Node.js · TypeScript · PHP · REST APIs · Webhooks</tspan>
+      </text>
+      <text x="44" y="164" font-size="13" fill="#8b949e">
+        ├─ Data &amp; Msg : <tspan fill="#79c0ff">PostgreSQL · MySQL · MongoDB · Supabase · Redis · BullMQ · RabbitMQ · SQS</tspan>
+      </text>
+      <text x="44" y="186" font-size="13" fill="#8b949e">
+        └─ DevOps/FE  : <tspan fill="#d2a8ff">Docker · Linux · Nginx · React · Next.js · Playwright E2E · Power BI · Grafana</tspan>
+      </text>
+    </g>
+
+    <!-- ==================== COMMAND 2 ==================== -->
+    <g class="line-2 mono" font-size="14">
+      <text x="28" y="224" font-weight="700">
+        <tspan fill="#3fb950">mauricio@prod</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#e6edf3">$</tspan>
+      </text>
+      <text x="176" y="224" fill="#f0f6fc">./impact-report.sh --env=production</text>
+      <g class="mask-2">
+        <rect x="176" y="208" width="500" height="22" fill="#0b0f17" />
+        <rect x="176" y="210" width="8.5" height="16" fill="#3fb950" class="cur-2" />
+      </g>
+    </g>
+
+    <!-- ==================== OUTPUT 2 (2x2 METRIC CARDS) ==================== -->
+    <g class="out-2">
+      <!-- Card 1 -->
+      <rect x="28" y="238" width="424" height="48" rx="6" fill="#111722" stroke="#21262d" stroke-width="1" />
+      <text x="42" y="258" font-size="13" font-weight="700" fill="#3fb950" class="mono">[✔] -75% Tiempo de Respuesta en BD</text>
+      <text x="42" y="276" font-size="12" fill="#8b949e" class="sans">Optimización SQL/NoSQL en PostgreSQL, MySQL y MongoDB</text>
+
+      <!-- Card 2 -->
+      <rect x="468" y="238" width="424" height="48" rx="6" fill="#111722" stroke="#21262d" stroke-width="1" />
+      <text x="482" y="258" font-size="13" font-weight="700" fill="#58a6ff" class="mono">[✔] ~160 Horas/Mes Ahorradas</text>
+      <text x="482" y="276" font-size="12" fill="#8b949e" class="sans">+10 flujos críticos de negocio automatizados con n8n</text>
+
+      <!-- Card 3 -->
+      <rect x="28" y="296" width="424" height="48" rx="6" fill="#111722" stroke="#21262d" stroke-width="1" />
+      <text x="42" y="316" font-size="13" font-weight="700" fill="#d2a8ff" class="mono">[✔] 7,000+ Contactos/Mes en Producción</text>
+      <text x="42" y="334" font-size="12" fill="#8b949e" class="sans">WhatsApp Business API (Meta) + Chatwoot en CO, EC y PE</text>
+
+      <!-- Card 4 -->
+      <rect x="468" y="296" width="424" height="48" rx="6" fill="#111722" stroke="#21262d" stroke-width="1" />
+      <text x="482" y="316" font-size="13" font-weight="700" fill="#f0883e" class="mono">[✔] Infraestructura &amp; QA End-to-End</text>
+      <text x="482" y="334" font-size="12" fill="#8b949e" class="sans">Linux · Docker · Nginx · SSL · Playwright E2E en CI/CD</text>
+    </g>
+
+    <!-- ==================== COMMAND 3 ==================== -->
+    <g class="line-3 mono" font-size="14">
+      <text x="28" y="374" font-weight="700">
+        <tspan fill="#3fb950">mauricio@prod</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#e6edf3">$</tspan>
+      </text>
+      <text x="176" y="374" fill="#f0f6fc">cat current_focus.txt</text>
+      <g class="mask-3">
+        <rect x="176" y="358" width="400" height="22" fill="#0b0f17" />
+        <rect x="176" y="360" width="8.5" height="16" fill="#3fb950" class="cur-3" />
+      </g>
+    </g>
+
+    <!-- ==================== OUTPUT 3 ==================== -->
+    <g class="out-3 mono">
+      <text x="28" y="400" font-size="13" fill="#a5d6ff">
+        &gt; Propiedad técnica end-to-end: Código ──▶ Base de Datos ──▶ Testing E2E ──▶ Deploy Linux
+      </text>
+    </g>
+
+    <!-- ==================== FINAL PROMPT ==================== -->
+    <g class="line-final mono" font-size="14">
+      <text x="28" y="432" font-weight="700">
+        <tspan fill="#3fb950">mauricio@prod</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#e6edf3">$</tspan>
+      </text>
+      <rect x="176" y="418" width="9" height="17" fill="#3fb950" class="final-cursor" />
+    </g>
+  </g>
+</svg>

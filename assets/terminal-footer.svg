@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 54" width="100%" role="img" aria-label="Footer terminal status bar">
+  <defs>
+    <linearGradient id="scanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0b0f17" stop-opacity="0" />
+      <stop offset="50%" stop-color="#3fb950" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#0b0f17" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <style>
+    .mono {
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
+    }
+    @keyframes scan {
+      0% { transform: translateX(-450px); }
+      100% { transform: translateX(920px); }
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0.25; }
+    }
+    .scanner {
+      animation: scan 5s linear infinite;
+    }
+    .dot {
+      animation: blink 2s ease-in-out infinite;
+    }
+  </style>
+
+  <rect x="2" y="2" width="916" height="50" rx="10" fill="#0b0f17" stroke="#21262d" stroke-width="1.5" />
+  <rect x="0" y="2" width="380" height="2" fill="url(#scanLine)" class="scanner" />
+
+  <!-- Zsh/Tmux style status bar -->
+  <rect x="14" y="13" width="96" height="28" rx="5" fill="#238636" />
+  <text x="62" y="31" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700" class="mono">NORMAL</text>
+
+  <text x="126" y="31" fill="#8b949e" font-size="12.5" class="mono">
+    branch:<tspan fill="#58a6ff"> main</tspan>  ·  status:<tspan fill="#3fb950"> disponible para retos Backend / Full Stack</tspan>
+  </text>
+
+  <circle cx="766" cy="27" r="4" fill="#3fb950" class="dot" />
+  <text x="778" y="31" fill="#e6edf3" font-size="12" class="mono">exit 0 · CO</text>
+</svg>

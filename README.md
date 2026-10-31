@@ -6,8 +6,8 @@
 <br />
 
 <!-- CONEXIÓN RÁPIDA -->
-<a href="https://www.linkedin.com/in/duquemaurodev" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-duquemaurodev-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+<a href="https://www.linkedin.com/in/mauroduquedevs" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-mauroduquedevs-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
 <a href="mailto:duqueivan493@gmail.com">
   <img src="https://img.shields.io/badge/Email-duqueivan493%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
